@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="zoom:1;overflow:hidden;"><head>
+<title>Web layout example with Magic jQuery plugin</title>
+<link rel="canonical" href="http://www.jquery-css.com/magic-jquery"/>
+<meta name="description" content="Web layout example with Magic jQuery plugin" />
+<meta name="keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="google-site-verification" content="fAws-nszy_aew5Vj-5iS1ZI4Qbu0hSZKnuaXxaJaDKI" />
+<link rel="shortcut icon" href="http://www.jquery-css.com/favicon.ico" type="image/x-icon" /> 
+<link type="text/css" rel="stylesheet" rev="stylesheet" media="screen" href="http://www.jquery-css.com/_css/default.css" />
+
+<!--[if IE]>
+<link href="http://www.jquery-css.com/_css/ie.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+<!--[if IE 6]>
+<link href="http://www.jquery-css.com/_css/ie6.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+<style>
+	.bkgBlue a, .inactive a {background-color:#00A0D8  !important; padding:10px !important;color:white !important;border-color:#004C66 !important}
+		.bkgBlue a:hover, .bkgBlue .selected {background-color:#004C66 !important;}
+		.inactive a {background-color:CCCCCC;}
+</style>
+</head>
+<body style="background:#666;">
+<!-- HEADER -->
+<div id="header" class="bkgDark">
+	<div class="bkgMedium tLeft noBorder">
+			<ul id="mainMenu" class="height30 horizontalList menuPacked left w12 whiteLink ">
+				<li>
+			      	<a>menu 1</a> 
+			        <ul class="horizontalList bkgDarker noBorder hidden">
+			          <li><a>sub menu 1</a></li>  
+			          <li><a>sub menu 1</a></li>  
+			          <li><a>sub menu 1</a>  
+			            <ul class="verticalList bkgDarker noBorder hidden">  
+			              <li><a>sub sub menu 1</a></li>  
+			              <li><a>sub sub menu 1</a></li>  
+			              <li><a>sub sub menu 1</a></li>  
+			            </ul>  
+			          </li>  
+			          <li><a>sub menu 1</a></li>  
+			        </ul>  
+			      </li>  
+			      <li>
+			      	<a >menu 2</a> 
+			        <ul  class="horizontalList bkgDarker noBorder hidden">
+			          <li><a>sub menu 2</a></li>  
+			          <li><a>sub menu 2</a></li>  
+			          <li><a>sub menu 2</a>  
+			            <ul class="horizontalList bkgDarker noBorder hidden">  
+			               <li>
+					      	<a >sub sub menu 2</a> 
+					        <ul  class="verticalList bkgDarker noBorder hidden">
+					           <li><a>sub sub sub menu 2</a>  
+					            <ul class="horizontalList bkgDarker hidden noBorder">  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					            </ul>  
+					          </li>  <li><a>sub sub sub menu 2</a></li>  
+					          <li><a>sub sub sub menu 2</a>  
+					            <ul class="verticalList bkgDarker hidden noBorder">  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					            </ul>  
+					          </li>  
+					          <li><a>sub sub sub menu 2</a></li>  
+					        </ul>  
+					      </li>  
+					      <li><a>sub sub menu 2</a>
+					      	<ul class="horizontalList bkgDarker hidden noBorder">  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					            </ul>  
+					      </li>  
+			              <li><a>sub sub menu 2</a>
+			              	<ul class="verticalList bkgDarker hidden noBorder">  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					              <li><a>sub sub sub sub menu 2</a></li>  
+					            </ul>  
+			              </li>  
+			              <li><a>sub sub menu 2</a></li>  
+			            </ul>  
+			          </li>  
+			          <li><a>sub menu 2</a></li>  
+			        </ul>  
+			      </li>  
+			      <li>
+			      	<a >menu 3</a> 
+			        <ul  class="verticalList bkgDarker noBorder hidden">
+			          <li><a>sub menu 3</a></li>  
+			          <li><a>sub menu 3</a></li>  
+			          <li><a>sub menu 3</a>  
+			            <ul class="horizontalList bkgDarker hidden noBorder">  
+			              <li><a>sub sub menu 3</a></li>  
+			              <li><a>sub menu 3</a></li>  
+			              <li><a>sub sub menu 3</a></li>  
+			              <li><a>sub sub menu 3</a></li>  
+			            </ul>  
+			          </li>  
+			          <li><a>sub menu 3</a></li>  
+			        </ul>  
+			      </li> 
+			      <li id="subMenu4"><a >menu 4</a></li> 
+			</ul>
+		</div>
+		<div id="subMenu4Content" class="subMenu hidden padding">
+			<div class="h2 pushDown">Big sub menu here</div>
+			<p class="pushDown tWhite lineHeight20">This div is outside the &lt;ul&gt; id=<span class="tColor">"menu"</span>&lt;/ul&gt; in the DOM.<br/> It can however be attached to the menu</p>
+			<img class="noBorder " alt="free jquery css web layout : homepage" src="http://www.jquery-css.com/i/free-jquery-css-web-layout-homepage.jpg">
+			<img class="noBorder" alt="free jquery css web layout : 3 columns" src="http://www.jquery-css.com/i/free-jquery-css-web-layout-3-columns.jpg">
+			<img class="noBorder " alt="free jquery css web layout : element follow screen" src="http://www.jquery-css.com/i/free-jquery-css-web-layout-follow-screen.jpg">
+		</div>
+		<div id="bottomDiv">
+			<ul class="horizontalList padding hoverList menu bkgBlue">
+				<li id="open"><a class="">open</a></li>
+				<li id="prev"><a class="">prev</a></li>
+				<li id="play"><a class="">play</a></li>
+				<li id="next"><a class="">next</a></li>
+			</ul>
+		</div<>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> 
+<script type="text/javascript" src="magic.js" ></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	var mainMenu = $("#mainMenu");
+	mainMenu.generateMenu();
+	$('#subMenu4Content').align({top:{my:0, at:1, offset:0, selector:'#subMenu4'}, left:'#subMenu4'});
+	$("#subMenu4").setSubMenu({id:"subMenu4Content", openDelay:0});
+	$('#bottomDiv').align({bottom:window, left:window});
+	
+	//BIND OPEN
+	var openLink = $("#open a");
+	openLink.click(function(){
+		if(openLink.hasClass("selected")) {mainMenu.closeMenu();} 
+		else {mainMenu.openMenu();}
+	});
+	mainMenu.bind("openMenu", function(){
+		openLink.addClass("selected");
+		openLink.html("close");
+	});
+	mainMenu.bind("closeMenu", function(){
+		openLink.removeClass("selected");
+		openLink.html("open");
+	});
+	
+	//BIND NEXT
+	$("#next a").click(function(){mainMenu.openNextMenu();});
+
+	//BIND PREV
+	$("#prev a").click(function(){mainMenu.openPrevMenu();});
+
+	//BIND PLAY
+	var playLink = $("#play a");
+	playLink.click(function(){
+		if(playLink.hasClass("selected")) {mainMenu.pauseMenu();} 
+		else {mainMenu.playMenu();}
+	});
+	mainMenu.bind("playMenu", function(){
+		playLink.addClass("selected");
+		playLink.html("pause");
+	});
+	mainMenu.bind("pauseMenu", function(){
+		playLink.removeClass("selected");
+		playLink.html("playMenu");
+	});
+	
+	$(window).resize();
+}); 
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title>Magic jQuery plugin example</title>
+<link rel="canonical" href="http://www.jquery-css.com/magic-jquery"/>
+<meta name="description" content="Magic jQuery plugin example" />
+<meta name="keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="google-site-verification" content="fAws-nszy_aew5Vj-5iS1ZI4Qbu0hSZKnuaXxaJaDKI" />
+<link rel="shortcut icon" href="http://www.jquery-css.com/favicon.ico" type="image/x-icon" /> 
+<link type="text/css" rel="stylesheet" rev="stylesheet" media="screen" href="http://www.jquery-css.com/_css/default.css" />
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+<link href="http://www.jquery-css.com/_css/ie.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+<!--[if IE 6]>
+<link href="http://www.jquery-css.com/_css/ie6.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+<style>
+	.bottom {position:fixed; bottom:0; top:auto;width:100px;height:100px;}
+	#orange, #blue, #yellow, #red {box-shadow:3px 3px 5px #111; -moz-box-shadow:3px 3px 5px #111;-webkit-box-shadow:3px 3px 5px #111}
+	@media (max-width: 600px) {
+		.bottom {width:26%}
+		#blue {left:5px !important}
+		#red {left:36% !important}
+		#pink {left:auto !important;right:5% !important}
+		
+	}
+</style>
+</head>
+<body style="background:#292929;">
+<h1 class="hidden">Magic jQuery example</h1>
+<div id="orange" style="background:orange;"></div>
+
+<div id="blue" class="bottom" style="height:50px;background:blue;left:30px"></div>
+<div id="red" class="bottom" style="background:red;height:100px;left:230px"></div>
+<div id="pink" class="bottom" style="height:0px;background:pink;left:430px"></div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="magic.js" ></script>
+<script type="text/javascript">
+var maxSize=100;
+$(document).ready(function () {
+	$("#orange").align(window);
+	$("#orange").limit({bottom:{at:1, offset:10, selector:'div'}});
+	window.setInterval(function(){
+		$('.bottom').each(function(){
+			var me = $(this);
+			var myHeight=me.height();
+			if(myHeight >= maxSize || myHeight<=0){
+				if(me.attr('bas')) {me.removeAttr('bas');} 
+				else {me.attr("bas", true);}
+			}
+			if(me.attr('bas')){
+				me.css({height:(myHeight-2)+'px'});
+			} else {
+				me.css({height:(myHeight+2)+'px'});
+			}
+		});
+		$(window).resize();
+	}, 30);
+	$(window).resize();
+}); 
+</script>
+
+</body>
+</html>
