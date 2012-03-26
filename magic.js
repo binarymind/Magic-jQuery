@@ -1,5 +1,5 @@
 /*
- * Magic jQuery JavaScript Library v1.3.3
+ * Magic jQuery JavaScript Library v1.3.4
  * http://jquery-css.com/
  *
  * Copyright 2011, Bastien LIUTKUS from Binary Mind
@@ -1456,10 +1456,12 @@ $.magic.resizable = new Array;
 							sideActive : new Array,
 							/* unactivate the resize for this element */
 							unActive : function(){
+								console.log("unactive");
 								$("body").css("cursor", "auto");
 								target.removeClass('tNoSelect');
 								document.onselectstart = 'returnTrue';
 								delete $.magic.resizable.active;
+								$("body").unbind("mousemove keydown",$.magic.resizable[myOriginalSelector].resizeFunction);
 							},
 							/* detect if event is over resize zone , 
 							 * set the sideActive if not set
@@ -1583,7 +1585,8 @@ $.magic.resizable = new Array;
 							if($.magic.resizable[myOriginalSelector].options.disabled) return;
 							if($.magic.resizable[myOriginalSelector].detectFunction($(this), ev)) {
 								$.magic.resizable.active =myOriginalSelector;		
-								$("body").mousemove($.magic.resizable[myOriginalSelector].resizeFunction);	
+								$("body").mousemove($.magic.resizable[myOriginalSelector].resizeFunction);
+								$("body").keydown($.magic.resizable[$.magic.resizable.active].unActive);
 							} else {
 								$.magic.resizable.leaveEvent = true;
 							}
