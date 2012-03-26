@@ -1456,7 +1456,6 @@ $.magic.resizable = new Array;
 							sideActive : new Array,
 							/* unactivate the resize for this element */
 							unActive : function(){
-								console.log("unactive");
 								$("body").css("cursor", "auto");
 								target.removeClass('tNoSelect');
 								document.onselectstart = 'returnTrue';
