@@ -1461,6 +1461,7 @@ $.magic.resizable = new Array;
 								document.onselectstart = 'returnTrue';
 								delete $.magic.resizable.active;
 								$("body").unbind("mousemove keydown",$.magic.resizable[myOriginalSelector].resizeFunction);
+								window.getSelection().collapse(document.getElementById("realContainerWrapper"), 0);
 							},
 							/* detect if event is over resize zone , 
 							 * set the sideActive if not set
